@@ -28,6 +28,22 @@ describe('Thermostat', () => {
       thermostat.down();
     }
     expect(thermostat.getCurrentTemperature()).toEqual(10);
-  })
+  });
+
+  it('has a power saving mode on by default', () => {
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+
+  it('can switch power saving mode off', () => {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+  });
+
+  it('can switch the power saving mode on again', () => {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+    thermostat.switchPowerSavingModeOn();
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
 
 });
