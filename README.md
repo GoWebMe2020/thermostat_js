@@ -21,8 +21,8 @@ Build a thermostat with JavaScript tht can be changed in the browser.
 ## Build status
 
 1. Initial commit.
-2. code and tests for thermostat to start at 20 degrees, increase the temperature, decrease the temperature and set a minimum limit of 10 degrees.
-3. code and tests for the thermostat to have a maximum temp of 25 when PSM is on and 32 when PSM if off. PSM is on by default. The thermostat can be reset.
+2. Code and tests for thermostat to start at 20 degrees, increase the temperature, decrease the temperature and set a minimum limit of 10 degrees.
+3. Code and tests for the thermostat to have a maximum temp of 25 when PSM is on and 32 when PSM if off. PSM is on by default. The thermostat can be reset.
 
 ## Code style
 

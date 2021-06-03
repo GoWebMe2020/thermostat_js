@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Thermostat</title>
+</head>
+<body>
+
+  <section>
+    <h1 class="low-usage" id="temperature">Thermostat is Off</h1>
+
+    <p>
+      <button id="temperature-up">+</button>
+      <button id="temperature-down">-</button>
+      <button id="temperature-reset">Reset</button>
+      Power Saving Mode is <span id="power-saving-mode">On</span>
+      <button id="powersaving-on">PSM On</button>
+      <button id="powersaving-off">PSM Off</button>
+    </p>
+
+  </section>
+    <h1>Current temperature: <span id="current-temperature"></span></h1>
+    <h1>Minimum temperature: <span id="min-temperature"></span></h1>
+    <h1>Maximum temperature: <span id="max-temperature"></span></h1>
+    <h1>Wind Speed: <span id="wind-speed"></span></h1>
+    <h1>Gusts: <span id="gusts"></span></h1>
+  <section>
+
+  </section>
+  <script src="interface.js"></script>
+  <script src="src/thermostat.js"></script>
+</body>
+</html>

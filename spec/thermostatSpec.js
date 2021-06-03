@@ -68,6 +68,33 @@ describe('Thermostat', () => {
   it('can reset to the default temp',() => {
     thermostat.resetTemperature()
     expect(thermostat.getCurrentTemperature()).toEqual(20)
-  })
+  });
+
+  describe('displaying usage levels', () => {
+    describe('when the temperature is below 18 degress', () => {
+      it('it is considered low-usage', () => {
+        for(let i = 0; i < 3; i++) {
+          thermostat.down();
+        }
+        expect(thermostat.energyUsage()).toEqual('low-usage');
+      });
+    });
+
+    describe('when the temp is between 18 and 25', () => {
+      it('it is considered as medium-usage', () => {
+        expect(thermostat.energyUsage()).toEqual('medium-usage');
+      });
+    });
+
+    describe('when the temp is anything else', () => {
+      it('it is considered as high-usage', () => {
+        thermostat.switchPowerSavingModeOff()
+        for(let i = 0; i < 6; i++) {
+          thermostat.up();
+        }
+        expect(thermostat.energyUsage()).toEqual('high-usage');
+      });
+    });
+  });
 
 });

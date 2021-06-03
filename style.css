@@ -1,0 +1,16 @@
+* {
+  transition: 2s;
+}
+
+.low-usage {
+  background-color: green;
+}
+
+.medium-usage {
+  background-color: black;
+  color: #fff;
+}
+
+.high-usage {
+  background-color: red;
+}
