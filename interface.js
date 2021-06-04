@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const updateTemperature = () => {
-    document.querySelector('#temperature').innerText = thermostat.temperature;
-    document.querySelector('#temperature').className = thermostat.energyUsage();
+    document.querySelector('#temperature').innerText = thermostat.temperature + " °C";
+    document.querySelector('#forecast').className = thermostat.energyUsage();
   }
   const thermostat = new Thermostat();
   updateTemperature();
@@ -32,17 +32,21 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#power-saving-mode').innerText = "Off";
   });
 
-  fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric')
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      document.querySelector('#current-temperature').innerText = data.main.temp
-      document.querySelector('#min-temperature').innerText = data.main.temp_min
-      document.querySelector('#max-temperature').innerText = data.main.temp_max
-      document.querySelector('#wind-speed').innerText = data.wind.speed
-      document.querySelector('#gusts').innerText = data.wind.gust
-    });
+  document.querySelector('#select-city').addEventListener('submit', (event) => { 
+    event.preventDefault();
+    const city = document.querySelector('#current-city').value;                 
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=de921a59d74548c35e12b3768f7b0e4c&units=metric`
+  
+    fetch(url)
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        document.querySelector('#current-temperature').innerText = data.main.temp
+        document.querySelector('#min-temperature').innerText = data.main.temp_min
+        document.querySelector('#max-temperature').innerText = data.main.temp_max
+        document.querySelector('#wind-speed').innerText = data.wind.speed
+    })   
 
-
-});
+  })
+})

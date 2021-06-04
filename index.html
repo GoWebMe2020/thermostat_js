@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Thermostat</title>
 </head>
-<body>
 
-  <section>
-    <h1 class="low-usage" id="temperature">Thermostat is Off</h1>
+<body >
 
-    <p>
-      <button id="temperature-up">+</button>
-      <button id="temperature-down">-</button>
-      <button id="temperature-reset">Reset</button>
-      Power Saving Mode is <span id="power-saving-mode">On</span>
-      <button id="powersaving-on">PSM On</button>
-      <button id="powersaving-off">PSM Off</button>
-    </p>
+  <main id="forecast" class="low-usage">
+    <div class="center-box">
+        <div class="thermostat">
+            <h1  id="temperature"><span></h1>
+            <div class="inc-dec-buttons">
+              <button id="temperature-down">-</button>
+              <button id="temperature-up">+</button>
+            </div>
+              <button id="temperature-reset">Reset</button>
+              Power Saving Mode is <span id="power-saving-mode">On</span>
+              <button id="powersaving-on">PSM On</button>
+              <button id="powersaving-off">PSM Off</button>
+        </div>
+        <div class="weather">
+            <div>
+              <form id="select-city">
+                <input id="current-city" type="text" placeholder="Enter a city"></input>
+                <input type="submit"></input>
+              </form>
+            </div>
+            <div class="temps">
+              <div class="min-max">
+                <h1>Current temperature</h1>
+                <h1><span id="current-temperature"></span> &#xb0;C</h1>
+              </div>
+              
+              <div class="min-max">
+                <h1>Min: <span id="min-temperature"></span> &#xb0;C</h1>
+                <h1>Max: <span id="max-temperature"></span> &#xb0;C</h1>
+              </div>
+              <h1>Wind Speed: <span id="wind-speed"></span> mps</h1>
+            </div>
+        </div>
+    </div>
+  </main>
 
-  </section>
-    <h1>Current temperature: <span id="current-temperature"></span></h1>
-    <h1>Minimum temperature: <span id="min-temperature"></span></h1>
-    <h1>Maximum temperature: <span id="max-temperature"></span></h1>
-    <h1>Wind Speed: <span id="wind-speed"></span></h1>
-    <h1>Gusts: <span id="gusts"></span></h1>
-  <section>
-
-  </section>
   <script src="interface.js"></script>
   <script src="src/thermostat.js"></script>
 </body>
+
 </html>
