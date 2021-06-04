@@ -48,9 +48,8 @@ N/A
 
 ## Tests
 
-####  specs, 0 failures
+####  13 specs, 0 failures
 
-13 specs, 0 failures
 #### Thermostat
 * when the power saving mode is on
 * has a maximum temperature of 25 degrees
